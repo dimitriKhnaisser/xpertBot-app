@@ -26,6 +26,8 @@ class StoreTeacherRequest extends FormRequest
             'last_name'=>'required|string|max:255',
             'phone_number'=>'required|string|unique:students,phone_number|max:255',
             'email'=>'required|string|unique:students,email|max:255|email',
+            'password'=>'required|string|min:8|confirmed',
+
         ];
     }
 }

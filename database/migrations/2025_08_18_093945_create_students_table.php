@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('name');         
             $table->string('last_name');
             $table->string('phone_number')->unique();            
-            $table->string('email')->unique();            
-            $table->string('linkedin')->unique();
-            $table->string('github')->unique();
+            $table->string('email')->unique();
+            $table->string('password');                        
+            $table->string('linkedin')->unique()->nullable();
+            $table->string('github')->unique()->nullable();
             $table->timestamps();
         });
     }

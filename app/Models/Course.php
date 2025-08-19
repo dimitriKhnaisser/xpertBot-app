@@ -21,6 +21,6 @@ class Course extends Model
         return $this->belongsTo(Difficulty::class);
     }
     public function students(){
-        $this->hasMany(Student::class);
+        $this->belongsToMany(Student::class);
     }
 }
