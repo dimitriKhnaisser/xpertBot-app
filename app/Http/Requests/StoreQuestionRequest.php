@@ -22,9 +22,9 @@ class StoreQuestionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'grade'=>'required|integer|max:100',
+           // 'grade'=>'required|integer|max:100',
             'about'=>'required|string|max:255',
-            'exam_id'=>'required|exists:exams,id'//the exams_id should be in the url
+            //'exam_id'=>'required|exists:exams,id'//the exams_id should be in the url
         ];
     }
 }

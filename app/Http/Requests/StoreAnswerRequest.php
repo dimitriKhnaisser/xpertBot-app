@@ -23,7 +23,7 @@ class StoreAnswerRequest extends FormRequest
     {
         return [
             'about'=>'required|string|max:255',
-            'correct'=>'boolean|required'
+            'correct'=>'boolean|required',
         ];
     }
 }

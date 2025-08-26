@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStudentRequest;
+use App\Models\Answer;
 use App\Models\Course;
 use App\Models\Job;
 use App\Models\Student;
@@ -126,5 +127,16 @@ class StudentController extends Controller
          return response()->json([
                 "Company"=>"{$company->name}",
             ],400);
+    }
+    public function studentChooseAnswer(Request $request,$answerId){
+        $student = $request->user();
+        $answer = Answer::findOrFail($answerId);
+        $question = $answer->question;
+        $student->answers()->attach($answerId);
+        return response()->json([
+            "Question"=>"{$question}",
+            "Answer"=>"{$answer}",
+        ]);
+
     }
 }

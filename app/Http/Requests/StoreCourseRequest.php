@@ -23,10 +23,10 @@ class StoreCourseRequest extends FormRequest
     {
          return [
             'name'=>'required|string|max:255',
-            'classroom'=>'required|string|max:255',
+            'classroom'=>'string|max:255',
             'amount'=>'required|integer',
-            'teacher_id'=>"required|exists:teachers,id",//the teacher who created the course is the teacher
-            'difficulty_id'=>"required|exists:difficulties,id"//difficulty should be chosen in arguments
+            //'teacher_id'=>"required|exists:teachers,id",//the teacher who created the course is the teacher
+            'difficulty_id'=>"required|exists:difficulties,id"//difficulty in query params
         ];
     }
 }
