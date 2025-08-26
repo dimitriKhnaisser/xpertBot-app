@@ -20,10 +20,10 @@ class Student extends Model
         return $this->hasOne(Wallet::class);
     }
     public function courses(){
-        return $this->belongsToMany(Course::class);
+        return $this->belongsToMany(Course::class,'student_course','student_id','course_id');
     }
     public function answers(){
-        return $this->belongsToMany(Answer::class);
+        return $this->belongsToMany(Answer::class,'student_answer','student_id','answer_id');
     }
     
 }

@@ -21,5 +21,7 @@ class ExamFactory extends Factory
             'grade' => $this->faker->numberBetween(0, 100),
             'course_id' => Course::inRandomOrder()->first()->id, // creates a course if none exists
         ];
+
     }
+    
 }

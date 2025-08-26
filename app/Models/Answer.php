@@ -15,7 +15,7 @@ class Answer extends Model
         return $this->belongsTo(Question::class);
     }
     public function students(){
-        return $this->belongsToMany(Student::class);
+        return $this->belongsToMany(Student::class,'student_answer','student_id','answer_id');
     }
     
     
